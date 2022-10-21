@@ -1,0 +1,3 @@
+Here is the source .RMD file used to create the R Shiny and R Markdown guide shared withh CNAP at https://people.beocat.ksu.edu/~karipayne/ShinyCNAP/. This page is all knit from one R Markdown file, and placed in the "public_html" folder in my Beocat home directory. For more on openly sharing HTML pages through Beocat, see https://support.beocat.ksu.edu/BeocatDocs/index.php/AdvancedSlurm#Openly_sharing_files_on_the_web.
+
+This website is a living document, so the examples and resources may change as more become available. If you have any examples, resources, or related articles you would like to see on this site, contact me at karipayne@ksu.edu.
