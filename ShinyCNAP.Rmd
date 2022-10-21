@@ -1,0 +1,239 @@
+---
+title: "R Shiny & R Markdown"
+author: "Examples and Resources"
+output:
+   html_document:
+      theme:
+         bg: "#EFEFEF"
+         fg: "#283d3b"
+         primary: "#924CE8"
+         header_font: !expr bslib::font_google("Quicksand")
+---
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+
+<style type="text/css">
+  body{
+  font-size: 13pt;
+}
+h1{
+   font-family: "Quicksand", sans-serif;
+   font-weight: bold;
+}
+h2{
+   font-family: "Quicksand", sans-serif;
+   font-weight: bold;
+}
+h3{
+   font-family: "Quicksand", sans-serif;
+   font-weight: bold;
+}
+</style>
+------------------------------------------------------------------------
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# {.tabset .tabset-fade}
+
+This site contains examples and resources for R Shiny and R Markdown. These will be updated as I find more!\
+If you have any examples or resource links you would like to see on this page, email me @ karipayne@ksu.edu.
+
+## Shiny Examples
+### Shiny Examples
+
+Shiny is an R package used to build web apps. The idea of building a web app may seem daunting, but if you already use R you are more than 50% of the way to making a Shiny app!
+
+Shiny can be used to showcase data in an interactive way, turn your stats into user-friendly apps, and make learning tools. Below there are a variety of examples, all embedded within this page. You can click the link provided above each app to open the app in a new browser tab.
+
+#### Showcase Data
+
+Old Faithful Eruptions histogram. Click <a href="https://beta.rstudioconnect.com/jjallaire/shiny-eruptions/" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://beta.rstudioconnect.com/jjallaire/shiny-eruptions/", height = "500px")
+```
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+KMeans Clustering example. Click <a href="https://jjallaire.shinyapps.io/shiny-kmeans/" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://jjallaire.shinyapps.io/shiny-kmeans/", height = "500px")
+```
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Flexdashboard data exploration example. Click <a href="https://karipayne.shinyapps.io/flexdb_example" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://karipayne.shinyapps.io/flexdb_example", height = "500px")
+```
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ERP demo. Click <a href="https://craddm.shinyapps.io/ERPdemo/" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://craddm.shinyapps.io/ERPdemo/", height = "500px")
+```
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Movie Explorer. Click <a href="https://shiny.rstudio.com/gallery/movie-explorer.html" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://shiny.rstudio.com/gallery/movie-explorer.html", height = "500px")
+```
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#### Turn Your Stats into Apps
+
+Use complex models to display predictions in a user-friendly way, like this example predicting corn yield. Click <a href="https://karipayne.shinyapps.io/corny0_tests/" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://karipayne.shinyapps.io/corny0_tests/", height = "500px")
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Create games and experiments. Click <a href="https://brandonkopp.com/portfolio/rock-paper-scissors-in-r-shiny/" target="_blank">here</a> to open in a new tab.
+
+This app is no longer available online, but you can read about it and view screenshots here:
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://brandonkopp.com/portfolio/rock-paper-scissors-in-r-shiny/", height = "500px")
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#### Make Learning Tools
+
+Shiny is also great for creating interactive examples and tutorials to use in your classes.
+
+Longest run of coin flip heads or tails. Click <a href="http://shiny.calpoly.sh/Longest_Run/" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("http://shiny.calpoly.sh/Longest_Run/", height = "500px")
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Signal Detection Theory Tutorial. Created by Mike! Click <a href="https://michaelyoungksu.shinyapps.io/SDTTutorial/" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://michaelyoungksu.shinyapps.io/SDTTutorial/", height = "500px")
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Simulation of the Goldman-Hodgkin-Katz-Equation. This example is embedded within a full webpage, so you can scroll down to get to the app itself. Click <a href="https://cognitive-ethology.netlify.app/post/2020-10-13-shiny/" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://cognitive-ethology.netlify.app/post/2020-10-13-shiny/", height = "500px")
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Shiny Resources
+### Shiny Resources
+
+There are two main ways to create a Shiny app. You can create a Shiny app with R files, or you can create a Shiny app with an R Markdown file.
+Creating a Shiny app with R files requires either a separate user interface and server file (UI.r and Server.r), or a single file that has
+separate UI and server elements.
+
+To create a Shiny app in an R Markdown file, add the command `runtime: shiny`to the header at the top, 
+and then use Shiny widgets or Shiny render functions within the document itself. 
+
+#### Example Files in R Studio
+
+There are built-in examples of both of these app types in R Studio…\
+
+  - For a standard shiny app, click `New file > Shiny web app`
+  - For a shiny app in R Markdown, click `New file > R Markdown` and choose “Shiny” as an option.\
+  
+These examples can be great places to start, and try adding in your own text and figures.
+
+#### Dashboards
+
+Additionally, Shiny can create dashboard-type apps, where content is organized into columns or rows.\
+The <a href="https://pkgs.rstudio.com/flexdashboard/" target="_blank">Flexdashboard package</a> can help you create dashboard apps in an R Markdown file.\ 
+The <a href="https://rstudio.github.io/shinydashboard/index.html" target="_blank">Shinydashboard package</a> 
+can create dashboards in normal R files.
+
+#### More Resources
+
+For great Shiny tutorials, visit these sites:
+
+https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/
+https://rstudio.github.io/flexdashboard/articles/using.html
+https://rstudio.github.io/shinydashboard/get_started.html
+
+For more Shiny examples, check these out:
+
+https://shiny.rstudio.com/gallery/
+https://rstudio.github.io/flexdashboard/articles/examples.html
+https://rstudio.github.io/shinydashboard/examples.html
+
+## Markdown Examples
+### Markdown Examples
+
+An R Markdown file is a document with code, output, and text all in one. This document uses Markdown language for easy formatting & conversion to HTML.
+For more on the Markdown language, see <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank">this formatting cheat sheet.</a>\
+Along with HTML pages, R Markdown documents can also be output to PDF, Word, PPT.
+
+#### A Guide to Your Analyses
+
+Markdown code can be used to show figures and code from R in an easy-to-read format. Click <a href="https://juba.github.io/rmdformats/articles/examples/readthedown.html" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://juba.github.io/rmdformats/articles/examples/readthedown.html", height = "500px")
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+You can also write digital books in R Markdown! Click <a href="https://bookdown.org/yihui/rmarkdown/#preface" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://bookdown.org/yihui/rmarkdown/#preface", height = "500px")
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#### Make an Easy Web Page
+Making a web page in R Markdown can be as easy as a single Markdown page knitted to html.
+Websites made in R Markdown can also be more advanced, like <a href="https://rmarkdown.rstudio.com/" target="_blank">the website for R Markdown itself!</a>
+
+You can host websites on Beocat using a public_html folder. You can learn more on <a href="https://support.beocat.ksu.edu/BeocatDocs/index.php/AdvancedSlurm#Openly_sharing_files_on_the_web" target="_blank">the Beocat documentation website</a>.\
+For more basic Beocat info, check out <a href="https://support.beocat.ksu.edu/BeocatDocs/index.php?title=Main_Page" target="_blank">this page</a>.
+
+*This web page itself is created in a single R Markdown file, and hosted on Beocat!*
+\
+To view the code used for this site, check out my github <a href="https://github.com/karipayne/ShinyCNAP" target="_blank">here</a>.
+
+#### Make an Interactive Article
+
+R Markdown can be used to create exciting interactive articles! This can be done in Markdown alone, or using packages that add
+additional features, like <a href="https://www.rstudio.com/blog/distill/" target="_blank">the distill package</a>.
+
+Here is an example interactive article. Click <a href="https://distill.pub/2020/understanding-rl-vision/" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://distill.pub/2020/understanding-rl-vision/", height = "500px")
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+And here is an interactive article discussing interactive articles. Click <a href="https://distill.pub/2020/communicating-with-interactive-articles/" target="_blank">here</a> to open in a new tab.
+```{r, eval=TRUE, echo=FALSE, out.width = "100%"}
+knitr::include_url("https://distill.pub/2020/communicating-with-interactive-articles/", height = "500px")
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Markdown Resources
+### Markdown Resources
+
+R Markdown files have two main section types: normal text regions and code chunks. This layout can help to keep your R code much more organized 
+while you are working. Markdown headers also translate into outline bullet points in the clickable 'outline' button in R Studio.
+
+#### Example File in R Studio
+
+R Studio has a built-in example of an R Markdown document that loads up when you create a new document (unless you click "Create Empty 
+Document).\
+To view this example, click `New file > R Markdown`.\
+This example can be a great template to use when creating your own R Markdown document.
+
+#### More Resources
+For a great tutorial on R Markdown, check this site out:
+https://rmarkdown.rstudio.com/lesson-1.html
+
+This site is a handy reference for formatting in Markdown:
+https://www.markdownguide.org/cheat-sheet/
+
+And for more examples of R Markdown documents, check these out here:
+https://rmarkdown.rstudio.com/gallery.html
+
+## Relevant Articles
+### Relevant Articles
+
+Thinking Outside the Box: Developing Dynamic Data Visualizations for Psychology with Shiny \
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4664644/
+
+Communicating with Interactive Articles \
+https://distill.pub/2020/communicating-with-interactive-articles/
+
+Have any other related articles, or a great example of an interactive article? Email karipayne@ksu.edu.
